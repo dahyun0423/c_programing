@@ -1,0 +1,316 @@
+// 문제 1
+// hint : 문자형 변수 선언 char ch;
+// 문자입력 ch = getchar(); 또는 scanf("%c',&ch):
+// 문자(아스키코드값)는 'A' 'Z' 'a' 'z'와 같이 표현
+// 문자를 하나 입력받아 
+// 알파벳 대문자, 소문자, 기타문자 여부를 출력하는 프로그램
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>          
+#include <math.h>
+
+int main() {
+	char ch;
+	printf("문자를 입력하세요. : ");
+	scanf("%c", &ch);
+
+	if (ch >= 'A' && ch <='Z')
+		printf("대문자입니다.\n");
+
+	else if (ch >= 'a' && ch <= 'z')
+		printf("소문자입니다.\n");
+
+	else
+		printf("기타문자입니다.\n");
+
+
+}
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+// 문제 2  (옛날의 시험문제)
+//대문자이면 해당 소문자, 소문자이면 해당 대문자 출력
+// 문자입력 : A
+//A는 대문자이고 소문자는 a
+
+//문자입력 : z
+// z는 소문자이고 대문자는 z 
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>          
+#include <math.h>
+
+int main() {
+	char ch;
+	printf("문자를 입력하세요. : ");
+	scanf("%c", &ch);
+	
+	
+	if (ch >= 'A' && ch <='Z')                               //ch가 "A"라면
+		printf("%c는 대문자이고 소문자는 %c이다. \n", ch, ch - 'A' + 'a');
+
+
+	else if (ch >= 'a' && ch <= 'z')                          //ch가 "a"라면
+		printf("%c는 소문자이고 대문자는 %c이다. \n", ch - 'a' + 'A');
+
+	else
+		printf("기타문자입니다.\n");
+
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
++) 아스키코드 숫자로 짠 코드
+
+// 문제 2(옛날의 시험문제)
+//대문자이면 해당 소문자, 소문자이면 해당 대문자 출력
+// 문자입력 : A
+//A는 대문자이고 소문자는 a
+
+//문자입력 : z
+// z는 소문자이고 대문자는 z 
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>          
+#include <math.h>
+
+int main() {
+	char ch;
+	printf("문자를 입력하세요. : ");
+	scanf("%c", &ch);
+	
+	
+	if (ch >= 'A' && ch <='Z')                               //ch가 "A"라면
+		printf("%c는 대문자이고 소문자는 %c이다. \n", ch, ch - 65 + 97);
+
+
+	else if (ch >= 'a' && ch <= 'z')                          //ch가 "a"라면
+		printf("%c는 소문자이고 대문자는 %c이다. \n", ch - 97 + 65);
+
+	else
+		printf("기타문자입니다.\n");
+
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>          
+#include <math.h>
+
+// 4장
+// 128,132
+// 정수형 short(비주얼스튜디오 기준 /2바이트, 16비트), int(4바이트/2진수/2배로 자리수가 더 많아), long (4바이트), long long  (8바이트)
+// 부동소수점형(실수) float (4바이트), double(8바이트) , long double
+// 문자형 char (1바이트)
+
+//129, 133
+
+int main() {
+	int x;							//sizeof는 변수 또는 자료형이 차지하는 바이트 수를 알려줌!
+	printf("변수 x의			크기: %d\n", sizeof(x)); // tab키 두번 띄어쓰기  // 변수
+
+	printf("char형의			크기: %d\n", sizeof(char));						// 자료형
+	printf("short형의			크기: %d\n", sizeof(short));
+	printf("int형의				크기: %d\n", sizeof(int));
+	printf("long형의			크기: %d\n", sizeof(long));
+	printf("long long형의		크기: %d\n", sizeof(long long));
+	printf("float형의			크기: %d\n", sizeof(float));
+	printf("double형의			크기: %d\n", sizeof(double));
+
+	return 0;
+}
+
+
+
+sizeof 에 대해 설명해봐라
+: 변수 또는 자료형이 차지하는 바이트수를 알려준다.
+예를 들어 printf("char : %d\n", sizeof(char)); 를 한다면 바이트 수가 1이 나온다.
+
+개념의 정의 + 예시까지 든다면 좋은 모범답안이 된다!
+후배를 가르쳐준다라고 생각하고 세세히  정확하게 적기!
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>          
+#include <limits.h>   // 기호 상수를 이 식에 있음
+
+//131,135
+// 132,137
+
+
+int main() {
+	short s_money = SHRT_MAX; //shrt_max와 같은 기호 상수
+	unsigned short u_money = USHRT_MAX; //부호가 없는 카운터
+	
+	s_money = s_money + 1;
+	printf("s_money = %d\n", s_money);
+
+	u_money = u_money + 1;
+	printf("u_money = %u\n", u_money);
+
+	return 0;
+}
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+// 상수를 선언하는 2가지 방법
+// #define 
+// const 변수형 변수 = 초기값
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>          
+#include <limits.h>   // 기호 상수를 이 식에 있음
+//137, 142
+#define TAX_RATE 0.2
+
+int main() {
+	const int MONTHS = 12;     //const = constant 상수 줄임말임. const로 선언한 변수는 값 변경할 수 없음.
+	int m_salary, y_salary;
+	// lvalue = 왼쪽 변수 (그릇) ,rvalue = 오른쪽 변수 (그릇)
+	printf("월급 입력 : ");
+	scanf("%d", &m_salary);
+
+	y_salary = m_salary * MONTHS;
+	printf("연봉 = %d\n", y_salary);
+	printf("세금 = %f\n", y_salary * TAX_RATE);
+
+	return 0;
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+********define은 안에서 하지 마슈!!!
+밖에서 하슈!!!
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>          
+// 145,149
+// double과 float 에서의 정밀도 차이가 난다
+// 정밀도를 더 챙기고 싶으면 double!
+// 2진수로 표현됨!
+
+int main() {
+	float x = 1.2345678901234567890;
+	double y = 1.2345678901234567890;
+
+	printf("float 크기 = %d\n", sizeof(float));
+	printf("double 크기 = %d\n", sizeof(double));
+
+	printf("x= %30.25f\n", x); //30자리, 소수점 이하 25자리 출력
+	printf("y= %30.25lf\n", y);
+	return 0;
+}
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>        
+//150,155  ASCII 코드표
+// 151,156
+int main() {
+	char code1 = 'A'; 			//code1 = 65 와 동일
+	char code2 = 65;
+
+	printf("code1 %c\n", code1);
+	printf("code2 %c\n", code2);
+	return 0;
+}
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>    
+
+int main() {
+	char ch = 'A';				// 같은 변수를 
+	printf("%c %d\n", ch, ch); //문자로 출력, 정수로 출력   // %c로 찍어줘야지만 문자로 %d는 정수!!!!
+
+
+	return 0;
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>    
+//163(8) , 169(8)
+// 아스키코드값 입력 : 80
+// p
+
+// 아스키코드값 입력 : 65
+// A
+
+// 아스키코드값 입력 : 97
+//a
+
+int main() {
+	int code;
+	printf("ASCII 코드 값을 입력하시오 : ");
+	scanf("%d", &code);
+	printf("ASCII 코드 %d 문자는 %c입니다.\n", code, code);
+	return 0;
+
+	
+}
+---------------------------------------------
+//추가문제 실행 예 2가지
+//문자입력 : a
+//97
+//문자입력 : P -> 80
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>    
+
+int main() {
+	char ch;
+	printf("ASCII 코드 값을 입력하시오 : ");
+	scanf("%c", &ch);
+	printf("ASCII 코드 %c 문자는 %d입니다.\n", ch, ch);
+	return 0;
+
+	
+}
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>    
+
+//163(8) , 169(8)
+// 아스키코드값 입력 : 80
+// p
+// 아스키코드값 입력 : 65
+// A
+// 아스키코드값 입력 : 97
+//a
+
+//추가문제 실행 예 2가지
+//문자입력 : a
+//97
+//문자입력 : P -> 80
+
+
+//3번문제 변형
+// 정수 x,y 입력 : 10 20
+// x = 10, y = 20 // 출력 후 x, y 변수의 값을 서로 교환
+// x = 20, y = 10
+
+int main() {
+	int x, y, tmp;
+
+	printf("정수 입력 : ");
+	scanf("%d %d", &x, &y);
+
+
+	printf("x=%d, y=%d\n", x, y);
+	tmp = x;
+	x = y;
+	y = x;
+
+	printf("x=%d, y=%d\n", x, y);
+	return 0;
+}
+
+
+
+
