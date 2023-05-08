@@ -1,0 +1,297 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//280,283 = for문
+
+//283예제
+int main() {
+	int sum = 0;
+	for (int i = 1; i <= 10; i++)
+		sum += i; // sum = sum + i;
+
+	printf("sum = %d\n", sum);
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+p.281
+int i = 1 // 초기식
+i <= 10 // 조건식
+i++ // 증감식
++) 
+<for문>
+sum = 0;
+	for (int i = 1; i <= 10; i++)
+		sum += i; // sum = sum + i;
+	printf("sum = %d\n", sum);
+	
+이거랑 <while문> 
+sum = 0;
+	int i = 1;
+	while (i <= 10) {
+		sum += i;
+		i++;
+	}
+	printf("sum = %d\n", sum);
+
+이건 같아 
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//285,289
+//음수 입력식 입력할때까지 반복
+//do while 구문
+int main() {
+	long long fact = 1;
+	int n;
+
+	
+	do {
+		printf("정수 입력 : ");
+		scanf("%d", &n);
+	
+		
+	} while  (n<0); 
+	for (int i = 1; i <= n; i++)
+		fact *= i;//fact = fact * i;
+
+	printf("%d! =  %lld \n", n, fact);
+
+	}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main() {
+	long long fact = 1;
+	int n;
+	
+	printf("정수를 입력하시오: ");
+	scanf("%d", &n);
+
+
+	for (int i = 1; i <= n; i++)
+		fact *= i;//fact = fact * i;
+
+	printf("%d! =  %lld \n", n, fact); //엘엘디 입 = lld
+
+	return 0;
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//286,290
+
+int main() {
+	long long fact = 1;
+	int n;
+
+
+	do {
+		printf("정수 입력 : ");
+		scanf("%d", &n);
+
+	} while (n < 0);
+	for (int i = 1; i <= n; i++)
+		fact *= i;//fact = fact * i;
+
+	printf("%d! =  %lld \n", n, fact);
+
+	fact = 1; 
+	//while을 이용하여 n! 다시 계산
+	int i = 1;
+	while (i <= n) {
+		fact *= i;
+		i++;
+		
+	}
+		printf("%d! = %lld \n", n, fact);
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+별표그리기 안나와
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+// 310(13)
+int main() {
+	int n, i, sum = 0;
+	
+	i = 1;
+
+	while (1) {     // 무한 loop; c에서 1이라는 뜻은 참. 0 아닌 것은 참이야 -1, -99 뭐 쨌든 0은 거짓 0아닌 모든 값은 참이다. 
+		sum += i;
+
+		if (sum > 10000) {
+			sum -= i; //sum = sum - i;
+			i--;  // i를 감소시킨다. // i = i-1;
+			break;
+		}
+		i++;
+	}
+	printf("1부터 %d까지의 합은 %d입니다. \n", i, sum);
+	return 0;
+
+}
+	 
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+보다 큰 정수의 자리수를 반대로 출력
+// 자연수 = -1
+// 0보다 큰 정수 : 123
+// 321
+// 힌트 = do while 또는 다른 반복문 사용 n이 1206일때
+//n = n / 10; 1206 = > 120
+//n %10 = 6; 
+
+int main() {
+	int input = 0, output =0;
+
+	do{
+		printf("자연수 : ");
+		scanf("%d", &input);
+	
+	} while (input < 1);
+	do{
+		printf("%d ", input % 10); // 일의 자리
+		input = input / 10;
+
+	} while (input > 0);
+
+
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+	int input = 0, output = 0;
+
+	do {
+		printf("음이아닌정수 : ");
+		scanf("%d", &input);
+
+	} while (input < 0);
+	do {
+		printf("%d ", input % 10); // 일의 자리
+		input = input / 10;
+
+	} while (input > 0);
+
+
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//중첩반복문 예제
+//290에 있는데 교수님 설명잘보기
+// 반복문을 이용하여 구구단 2단을 출력하는 
+int main() {
+	for (int n = 2; n<=9 ; n++)
+		for(int d =1 ; d<=9; d++)
+			printf("%d X %d = %d\n",n, d, n * d);
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//중첩반복문 예제
+//290에 있는데 교수님 설명잘보기
+// 반복문을 이용하여 구구단 2단을 출력하는 
+int main() {
+	for (int n = 2; n <= 9; n++) {
+		printf("---------< %d 단 >--------- \n", n);
+		for (int d = 1; d <= 9; d++)
+			printf("%d X %d = %d\n", n, d, n * d);
+
+	}
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+break : 스위치문이나 반복문을 빠져나갈때 사용됨
+go to 문 사용 절대 금지!!! 쓰지 말자!!!!!!!!!!!
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//293,297(break문) //296(continue문) -->필요하면 쓰세유
+//297 예제
+
+int main() {
+	char letter;
+
+	while (1) {
+		printf("소문자를 입력하시오: ");
+		scanf(" %c", &letter);
+
+		if (letter == 'Q')
+			break;
+		if (letter < 'a' || letter > 'z')
+			continue;
+
+		letter -= 32;
+		printf("변환된 대문자는 %c입니다.", letter);
+	}
+	return 0;
+}
+
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//293,297(break문) //296(continue문) -->필요하면 쓰세유
+//297 예제
+
+int main() {
+	char letter;
+
+	while (1) {
+		printf("소문자를 입력하시오: ");
+		scanf(" %c", &letter); //%c 앞에 공백문자가 있어야 함. 
+//키보드 입력버퍼에 a+enter를 치는데 띄어쓰기 안하면 첫번재는 a 두번째는 엔터를 가져가는 그렇게 됨 
+%c일때 즉 문자 하나 입력받을때만 문제가 됨. 
+
+		if (letter == 'Q')
+			break;
+		if (letter >= 'a' && letter <= 'z') {
+			letter -= 32;
+			printf("변환된 대문자는 %c입니다.", letter);
+
+		}
+
+	}
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+// 숫자 10개를 입력해서 가장 큰 숫자 찾기
+
+int main() {
+	int i, n,max=0,min=0;
+
+	printf("정수 : ");			//첫번째 정수
+	scanf("%d", &n);
+	max = n;
+	min = n;
+
+	for (int i = 1; i <= 4; i++) {		//2~5번째 정수
+		printf("정수 : ");
+		scanf("%d", &n);
+
+		if (n > max) {
+			max = n;
+			
+		}
+		if (n < min) {  //독립적으로 두어도 상관없고 else if로 두면 더 좋겠다.
+
+			min = n;
+		}
+		
+
+	}
+	printf("가장 큰 정수 = %d\n",max);
+	printf("가장 작은 정수 = %d\n", min);
+}
+
