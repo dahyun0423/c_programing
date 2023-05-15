@@ -1,0 +1,179 @@
+int array [100]
+첫번째는 0, 마지막은 99
+즉 array[0] , array[99] | 반드시 대괄호를 써야해
+array[0]가 그릇의 이름 
+array는 배열 이름
+
+0,1, ..., 99 = index 첨자
+그릇을 배열원소, 배열요소, element 래 
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+//418,404 배열의 선언
+//419,405 배열요소 접근 
+//422, 408 scores4.c
+#define STUDENTS 5
+
+int main() {
+	int score[STUDENTS], sum = 0, i, average = 0;
+
+	for (i = 0; i < STUDENTS; i++) {
+		printf("성적입력 : ");
+		scanf("%d", &score[i]); // 배열요소 score[i]가 일반 변수와 동일하므로 scanf에 &
+
+	}
+	
+	for (i = 0; i < STUDENTS; i++)
+		sum += score[i];   // sum= sum+score[i];와 동일 
+
+	average = sum / STUDENTS;
+	printf("평균 = %d\n", average);
+
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+//418,404 배열의 선언
+//419,405 배열요소 접근 
+//422, 408 scores4.c  평균값 소수점 이하 출력되도록 수정 
+#define STUDENTS 5
+
+int main() {
+	/*const int STUDENT = 5;*/ //C에서는 define을 해야하는 경우
+	int score[STUDENTS], sum = 0, i;
+	double average;
+
+	for (i = 0; i < STUDENTS; i++) {
+		printf("성적입력 : ");
+		scanf("%d", &score[i]); // 배열요소 score[i]가 일반 변수와 동일하므로 scanf에 &
+
+	}
+	
+	for (i = 0; i < STUDENTS; i++)
+		sum += score[i];   // sum= sum+score[i];와 동일 
+
+	average = (double)sum / STUDENTS;
+	printf("평균 = %d\n", average);
+
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define SIZE 6
+
+//416,430
+int main() {
+	int freq[SIZE] = { 0 };
+	int i;
+
+	srand(time(0));
+
+	for (i = 0; i < 10000; i++) {
+		int index = rand() % 6; // 0~5범위난수(주사위 1~6)
+		freq[index]++;		// freq[rand() % 6]++;
+		
+	}
+		
+	for (i = 0; i < SIZE; i++)
+		printf("%3d %10d\n", i+1, freq[i]); //3d는 3칸차지
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+int a = 1, b;
+b = a++; // a값을 구한 후에 a를 증가시킴
+
+a값: 2		b값 : 1
+
+b = a;
+a = a + 1;
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+int a = 1, b;
+b = ++a; //a를 증가시킨 후 a 값을 구함
+
+a값:2		b값 : 2
+
+a = a + 1; b = a;
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+
+int main() {
+	int days[12] = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30,31 };
+	int i;
+
+	for (i = 0; i < 12; i++)
+		printf("%d월은 %d일까지 있습니다. \n",i +1 ,days[i]);
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+//444(2), 460(2)
+//크기가 10인 정수 배열에 난수를 저장한 후 각 배열 요소(10개) 출력
+//1342 32483 2342 2452 .... 2222
+
+
+int main() {
+	srand(time(0));
+
+	int x[10];  //맨날 초기화한다고 생각 ㄴ 초기화가 필요할 때 해
+	int i;
+	
+	for (i = 0; i < 10; i++) {
+		x[i] = rand(); //이거를 생각 못함.
+	
+	}
+
+	for (i = 0; i < 10; i++) {
+		printf("%d ", x[i]); //이건 생각함.
+	}
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+//444(2), 460(2)
+//크기가 10인 정수 배열에 난수를 저장한 후 각 배열 요소(10개) 출력
+//1342 32483 2342 2452 .... 2222
+
+
+int main() {
+	srand(time(0));
+
+	int x[10];  //맨날 초기화한다고 생각 ㄴ 초기화가 필요할 때 해
+				// x는 배열이름, => 배열선언
+	int i;		
+	
+	for (i = 0; i < 10; i++) {
+		x[i] = rand(); //이거를 생각 못함.
+	
+	}
+
+	for (i = 0; i < 10; i++) {
+		printf("%d ", x[i]); //이건 생각함. //x[0],..x[9] 는 배열원소 ,배열요소야
+	}						// 배열요소가 변수야!!!!
+
+}
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+
